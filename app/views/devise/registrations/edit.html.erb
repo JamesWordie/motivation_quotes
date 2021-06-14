@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center my-5">
     <div class="col-6">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -13,6 +13,12 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
 
+          <%= f.input :firstname,
+                      required: false,
+                      input_html: { autocomplete: 'firstname'} %>
+          <%= f.input :lastname,
+                      required: false,
+                      input_html: { autocomplete: 'lastname'} %>
           <%= f.input :password,
                       hint: "leave it blank if you don't want to change it",
                       required: false,
@@ -27,13 +33,13 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update" %>
+          <%= f.button :submit, "Update", class:'btn btn-success' %>
         </div>
       <% end %>
 
       <h3>Cancel my account</h3>
 
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-danger' %></p>
 
       <%= link_to "Back", :back %>
     </div>

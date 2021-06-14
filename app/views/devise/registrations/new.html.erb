@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center my-5">
     <div class="col-6">
       <h2>Sign up</h2>
 
@@ -7,14 +7,16 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <%= f.input :firstname,
+                      required: true,
+                      input_html: { autocomplete: "firstname" } %>
+          <%= f.input :lastname,
+                      required: true,
+                      input_html: { autocomplete: "lastname" } %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
-          <%= f.input :firstname,
-                      required: true %>
-          <%= f.input :lastname,
-                      required: true %>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -25,7 +27,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class:'btn btn-success w-100 my-2' %>
         </div>
       <% end %>
 
