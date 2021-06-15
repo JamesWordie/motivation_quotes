@@ -13,7 +13,22 @@ body {
   }
 }
 
+.banner {
+  min-height: 50vh;
+  h1 {
+    margin: auto 0;
+  }
+}
+
 @media (max-width: 762px) {
+  .ml4 {
+    font-size: 3rem;
+  }
+
+  .banner {
+    min-height: 30vh;
+  }
+
   #home {
     h5 {
       font: 1.5rem 'Poppins';
