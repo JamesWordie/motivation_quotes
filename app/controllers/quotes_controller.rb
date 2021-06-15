@@ -11,7 +11,7 @@ class QuotesController < ApplicationController
     authorize @quote
     @quote.user = current_user
     if @quote.save
-      redirect_to dashboard_path(current_user)
+      redirect_to dashboard_path
     else
       render 'new'
     end
