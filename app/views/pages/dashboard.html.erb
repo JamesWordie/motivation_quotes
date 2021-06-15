@@ -1,38 +1,52 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
-    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
-      <% if @quotes.empty? %>
+    <% if @quotes.empty? %>
+      <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
         <%# simple_form_for [@quote, @user] do |f| %>
           <%#= f.input :title %>
           <%#= f.input :author %>
           <%#= f.submit %>
         <%# end %>
         <%= link_to 'Add your own quotes', new_quote_path, class:"new-quote text-center p-3" %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
-      <div class="card text-center my-5">
+      <div class="card text-center bg-dark my-5 mx-auto">
         <div class="card-header">
-          Featured
+          <h5 class="text-white">Featured</h5>
         </div>
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
-          <button type="button" class="btn btn-outline-primary">Get today's top quote</button>
+          <button id="today" type="button" class="btn new-quote">Get today's top quote</button>
         </div>
         <div class="card-footer text-muted">
-          <p><%= Date.today %></p>
+          <p><%= Time.now.strftime("%A") %>, <%= Date.today.to_s(:long) %></p>
         </div>
       </div>
     </div>
+  </div>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h2 class="text-center text-white"><%= @user.firstname.capitalize %>' Quotes</h2>
+    <%= link_to 'Add More Quotes', new_quote_path, class:"new-quote text-center p-3 my-1" %>
+  </div>
+  <div class="row justify-content-center align-items-center">
     <% @quotes.each do |quote| %>
     <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
-      <div class="card my-3 bg-dark text-light h-100 mx-auto">
+      <div class="card my-3 bg-dark text-light h-100 mx-auto" data-id="<%= quote.id %>">
         <div class="card-body">
           <h5 id="quote-title" class="card-title border-bottom pb-2"><%= quote.title %></h5>
           <p id="quote-author" class="card-text text-muted"><%= quote.author %></p>
         </div>
       </div>
+      <span class="w-100 d-inline-block text-center" data-action-id="<%= quote.id %>">
+        <%= link_to edit_quote_path(quote), class:"action-buttons mx-4" do %>
+          <i class="fas fa-pen-fancy"></i>
+        <% end %>
+        <%= link_to quote_path(quote), class:"action-buttons mx-4", method: :delete, data: { confirm: "Are you sure you want to delete?"} do %>
+          <i class="fas fa-eraser"></i>
+        <% end %>
+      </span>
     </div>
     <% end %>
   </div>

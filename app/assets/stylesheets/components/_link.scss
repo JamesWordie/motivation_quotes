@@ -1,6 +1,13 @@
 .new-quote {
   text-decoration: none;
+  color: white !important;
   &:hover {
+    cursor: crosshair;
+    background-color: lightgrey;
+    color: black !important;
+    margin: 0 5px;
+    border-radius: 5px;
     text-decoration: none;
   }
 }
+
