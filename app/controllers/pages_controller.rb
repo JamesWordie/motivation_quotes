@@ -7,6 +7,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @quotes = @user.quotes
+    @quotes = Quote.all
   end
 end

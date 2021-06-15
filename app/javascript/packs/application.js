@@ -23,7 +23,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { getTodayQuote } from '../components/_apiCall';
+import { getTodayQuote } from '../components/displayDaily';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
