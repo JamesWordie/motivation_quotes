@@ -2,6 +2,7 @@ require 'open-uri'
 require 'json'
 
 Quote.destroy_all
+User.destroy_all
 puts 'Cleaning the database.'
 
 puts 'Admin user'
