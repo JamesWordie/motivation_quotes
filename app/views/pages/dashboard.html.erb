@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
+      <% if @quotes.empty? %>
+        <%# simple_form_for [@quote, @user] do |f| %>
+          <%#= f.input :title %>
+          <%#= f.input :author %>
+          <%#= f.submit %>
+        <%# end %>
+        <%= link_to 'Add your own quotes', new_quote_path, class:"new-quote text-center p-3" %>
+      <% end %>
+    </div>
+    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
+      <div class="card text-center my-5">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <button type="button" class="btn btn-outline-primary">Get today's top quote</button>
+        </div>
+        <div class="card-footer text-muted">
+          <p><%= Date.today %></p>
+        </div>
+      </div>
+    </div>
+    <% @quotes.each do |quote| %>
+    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
+      <div class="card my-3 bg-dark text-light h-100 mx-auto">
+        <div class="card-body">
+          <h5 id="quote-title" class="card-title border-bottom pb-2"><%= quote.title %></h5>
+          <p id="quote-author" class="card-text text-muted"><%= quote.author %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<!--   <div class="row justify-content-center align-items-center">
+    <%# @quotes.sample(12).each do |quote| %>
+    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
+      <div class="card my-3 bg-dark text-light h-100 mx-auto">
+        <div class="card-body">
+          <h5 id="quote-title" class="card-title border-bottom pb-2"><%#= quote.title %></h5>
+          <p id="quote-author" class="card-text text-muted"><%#= quote.author %></p>
+        </div>
+      </div>
+    </div>
+    <%# end %>
+  </div> -->
+</div>

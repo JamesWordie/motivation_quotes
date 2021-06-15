@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    user = current_user
-    @quotes = user.quotes
+    @user = current_user
+    @quotes = @user.quotes
   end
 end
