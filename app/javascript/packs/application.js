@@ -26,12 +26,16 @@ import AOS from 'aos';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { getTodayQuote } from '../components/displayDaily';
+import { movingText } from '../components/movingText';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   if (document.getElementById('dashboard')) {
     getTodayQuote();
+  };
+  if (document.querySelector('.banner')) {
+    movingText();
   };
   AOS.init();
 });
