@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
     <% @quotes.sample(12).each do |quote| %>
-    <div class="col-md-6 col-lg-4 col-12 flex-fill">
-      <div class="card my-3 bg-dark text-light rounded-lg" style="width: 18rem;">
+    <div class="col-md-6 col-lg-4 col-12 flex-fill my-4">
+      <div class="card my-3 bg-dark text-light h-100 mx-auto">
         <div class="card-body">
-          <h5 class="card-title border-bottom pb-2"><%= quote.title %></h5>
-          <p class="card-text text-muted"><%= quote.author %></p>
+          <h5 id="quote-title" class="card-title border-bottom pb-2"><%= quote.title %></h5>
+          <p id="quote-author" class="card-text text-muted"><%= quote.author %></p>
         </div>
       </div>
     </div>
