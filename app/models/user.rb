@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :user_quotes
-  has_many :quotes, through: :user_quotes
+  has_many :quotes
 
   validates :firstname, presence: true
   validates :lastname, presence: true

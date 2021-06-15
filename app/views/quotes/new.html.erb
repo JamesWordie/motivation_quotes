@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-6">
+      <%= simple_form_for @quote do |f| %>
+        <%= f.input :title, placeholder: "Enter the quote's title (or text)" %>
+        <%= f.input :author, placeholder: "Enter the quote's author" %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -7,8 +7,9 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(quote_params)
-    @quote.user = current_user
+    @user = current_user
     if @quote.save
+      UserQuote.create!(user_id: @user, quote_id: @quote)
       redirect_to dashboard_path(current_user)
     else
       render 'new'
