@@ -3,13 +3,38 @@ function movingText() {
   ml4.opacityIn = [0,1];
   ml4.scaleIn = [0.2, 0.8];
   ml4.scaleOut = 1;
-  ml4.durationIn = 800;
-  ml4.durationOut = 600;
-  ml4.delay = 500;
+  ml4.durationIn = 650;
+  ml4.durationOut = 400;
+  ml4.delay = 300;
 
   anime.timeline({loop: true})
     .add({
       targets: '.ml4 .letters-1',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-2',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-3',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-4',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-5',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-6',
       opacity: ml4.opacityIn,
       scale: ml4.scaleIn,
       duration: ml4.durationIn
@@ -22,11 +47,34 @@ function movingText() {
       delay: ml4.delay
     }).add({
       targets: '.ml4 .letters-2',
-      opacity: ml4.opacityIn,
-      scale: ml4.scaleIn,
-      duration: ml4.durationIn
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
     }).add({
-      targets: '.ml4 .letters-2',
+      targets: '.ml4 .letters-3',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4 .letters-4',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4 .letters-5',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4 .letters-6',
       opacity: 0,
       scale: ml4.scaleOut,
       duration: ml4.durationOut,

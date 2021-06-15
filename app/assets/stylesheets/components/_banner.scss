@@ -3,11 +3,51 @@
   font-weight: 900;
   font-size: 4.5em;
 }
-.ml4 .letters {
+.ml4 .letters-1 {
   position: absolute;
   margin: auto;
   left: 0;
   top: 0.3em;
+  right: 0;
+  opacity: 0;
+}
+.ml4 .letters-2 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 1em;
+  right: 0;
+  opacity: 0;
+}
+.ml4 .letters-3 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 1.7em;
+  right: 0;
+  opacity: 0;
+}
+.ml4 .letters-4 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 2.4em;
+  right: 0;
+  opacity: 0;
+}
+.ml4 .letters-5 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 3.1em;
+  right: 0;
+  opacity: 0;
+}
+.ml4 .letters-6 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 3.8em;
   right: 0;
   opacity: 0;
 }
