@@ -2,3 +2,25 @@
 body {
   background-color: rgb(32,3,39);
 }
+
+#home {
+  h5 {
+    font: 2rem 'Poppins';
+  }
+
+  .card {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 762px) {
+  #home {
+    h5 {
+      font: 1.5rem 'Poppins';
+    }
+
+    .card {
+      width: 18rem;
+    }
+  }
+}
