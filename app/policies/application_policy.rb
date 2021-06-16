@@ -6,6 +6,10 @@ class ApplicationPolicy
     @record = record
   end
 
+  def daily?
+    true
+  end
+
   def index?
     false
   end

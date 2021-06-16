@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   get '/daily', to: 'pages#daily'
   resources :quotes, except: %i[index show]
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get '/daily', to: 'pages#daily'
+    end
+  end
 end
