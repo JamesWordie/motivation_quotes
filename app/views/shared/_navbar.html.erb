@@ -1,3 +1,4 @@
+<% unless current_page?(daily_path) %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-meteor" style="font-size: 30px;"></i>
@@ -36,3 +37,4 @@
     </ul>
   </div>
 </div>
+<% end %>
