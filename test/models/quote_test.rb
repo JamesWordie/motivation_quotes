@@ -4,6 +4,9 @@ class QuoteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  # model test or unit tests to check the validations on the models
+
   test 'quote has a title but no author so is invalid' do
     quote = Quote.new(title: 'Creativity is intelliegnece having fun.')
     assert_not quote.save, "tried to save wuthout author"

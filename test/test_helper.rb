@@ -14,6 +14,9 @@ class ActiveSupport::TestCase
   # Devise test helpers
   include Warden::Test::Helpers
   Warden.test_mode!
+
+  include Devise::Test::IntegrationHelpers
+
 end
 
 # Register the new driver for Capybara

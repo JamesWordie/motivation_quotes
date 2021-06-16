@@ -1,5 +1,7 @@
 require "application_system_test_case"
 
+# system test to check the paths the app is taking and the responses are as expected.
+
 class QuotesTest < ApplicationSystemTestCase
   # test "visiting the index" do
   #   visit quotes_url
