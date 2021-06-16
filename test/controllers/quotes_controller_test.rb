@@ -6,6 +6,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
   # end
   setup do
     sign_in users(:james)
+    @quote = quotes(:daily)
   end
 
   test "redirected if not logged in" do
@@ -31,4 +32,28 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
     get new_quote_url
     assert_response :success
   end
+
+  test "can create a quote" do
+    assert_difference('Quote.count') do
+      post quotes_url, params: { quote: { title: "You are never too old to reinvent yourself.", author: "Steve Harvey" } }
+    end
+  end
+
+  test "cannot create a quote without title and author" do
+    assert_no_difference('Quote.count') do
+      post quotes_url, params: { quote: { title: "", author: "" } }
+    end
+  end
+
+  # due to pundit policies these don't work, I need to look into and study polices test
+
+  # test "can edit a quote" do
+  #   get edit_quote_url(@quote)
+  #   assert_response :success
+  # end
+
+  # test "can delete a quote" do
+  #   delete quote_url(@quote)
+  #   assert_response :success
+  # end
 end
