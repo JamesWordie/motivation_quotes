@@ -1,3 +1,6 @@
+require 'rest-client'
+require 'json'
+
 class PagesController < ApplicationController
   before_action :all_quotes
   skip_before_action :authenticate_user!, only: %i[home daily]
@@ -7,6 +10,9 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    url = "https://zenquotes.io/api/today"
+    response = RestClient.get url
+    @data = JSON.parse(response)
   end
 
   def daily
